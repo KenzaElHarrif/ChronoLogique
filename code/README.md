@@ -1,1 +1,1 @@
-Ce dossier contient le code Arduino pour le système Atom
+Ce dossier contient le code Arduino
