@@ -27,3 +27,25 @@ Lorsque la boîte est débloquée, un système de fils est présenté. Il faut e
 ## Plan
 
 ![Plan du projet](images/tmp_18672662-a79e-4c08-b2f1-3421fb0069fc.jpg)
+
+## Progression
+
+### Semaine 11
+
+Code des Key Units
+
+### Semaine 12
+
+Code du Encoder + moteur
+
+### Semaine 13
+
+Code des fils
+
+### Semaine 14
+
+Finaliser TouchDesigner + Reaper
+
+### Semaine 15
+
+Présentation
