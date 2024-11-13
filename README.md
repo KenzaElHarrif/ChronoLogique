@@ -48,6 +48,15 @@ Problématique: Est-ce qu'on a le matériel requis pour le bon code ? **À véri
 
 Transfer Unit: Je trouve pas de code pour l'instant.
 
+If else dans TouchDesigner: https://forum.derivative.ca/t/if-statements/3655/8
+
+https://www.youtube.com/watch?v=pgpteF2Ztp8
+
+Event TouchDesigner: https://www.youtube.com/watch?v=MEqLHFLVNrM
+
+Plus d'info TouchDesigner: https://docs.derivative.ca/CHOP
+
+
 ## Progression
 
 ### Semaine 11
