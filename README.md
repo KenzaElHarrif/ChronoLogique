@@ -54,3 +54,4 @@ Présentation
 
 
 ServoMoteur: https://arduino-france.site/servo-arduino/
+ServoMoteur: https://www.otronic.nl/fr/schemas-de-raccordement-et-code-dexemple/schema-de-connexion-de-servomoteur-et-code-dexempl/
