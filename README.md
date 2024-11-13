@@ -28,6 +28,26 @@ Lorsque la boîte est débloquée, un système de fils est présenté. Il faut e
 
 ![Plan du projet](images/tmp_18672662-a79e-4c08-b2f1-3421fb0069fc.jpg)
 
+## Matériel
+
+- PbHub 2x
+- Key Units 4x
+- Encoder 1x
+- VH3.96 transfer Unit 3x
+- fils avec pinces 6x
+
+## Recherches pour le code
+
+ServoMoteur: https://arduino-france.site/servo-arduino/
+
+ServoMoteur: https://www.otronic.nl/fr/schemas-de-raccordement-et-code-dexemple/schema-de-connexion-de-servomoteur-et-code-dexempl/
+
+ServoMoteur: https://www.youtube.com/watch?v=kUHmYKWwuWs
+
+Problématique: Est-ce qu'on a le matériel requis pour le bon code ? **À vérifier**
+
+Transfer Unit: Je trouve pas de code pour l'instant.
+
 ## Progression
 
 ### Semaine 11
@@ -49,14 +69,3 @@ Finaliser TouchDesigner + Reaper
 ### Semaine 15
 
 Présentation
-
-## Recherches pour le code
-
-
-ServoMoteur: https://arduino-france.site/servo-arduino/
-
-ServoMoteur: https://www.otronic.nl/fr/schemas-de-raccordement-et-code-dexemple/schema-de-connexion-de-servomoteur-et-code-dexempl/
-
-ServoMoteur: https://www.youtube.com/watch?v=kUHmYKWwuWs
-
-Problématique: Est-ce qu'on a le matériel requis pour le bon code ?
