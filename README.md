@@ -56,6 +56,8 @@ Event TouchDesigner: https://www.youtube.com/watch?v=MEqLHFLVNrM
 
 Plus d'info TouchDesigner: https://docs.derivative.ca/CHOP
 
+Solution si ça fonctionne pas: Mélanger les Key Units sur la table, comme ça ils chercheront le btn 1 2 3 4 situés sur la table selon la somme présenté dans touch designer.
+
 
 ## Progression
 
