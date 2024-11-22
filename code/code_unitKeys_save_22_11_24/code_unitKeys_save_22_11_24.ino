@@ -201,6 +201,7 @@ if (sequenceIndex == 6) {
     delay(160);
     hasExecuted = false;//RÉPÉTER LA SÉQUENCE SI RATÉ
     monOsc.sendInt("/defaiteBouton", 0);
+    monOsc.sendInt("/victoireBouton", 0);
   }
 }
 }}
