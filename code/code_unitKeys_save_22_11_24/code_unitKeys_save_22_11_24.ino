@@ -198,8 +198,9 @@ if (sequenceIndex == 6) {
     myPbHub.setPixelColor(CHAN_NewssKEY, 0, 0, 0, 0);
     sequenceIndex = 0;
     currentIndex = 0;
-    delay(160);
+    delay(250);
     hasExecuted = false;//RÉPÉTER LA SÉQUENCE SI RATÉ
+    
     monOsc.sendInt("/defaiteBouton", 0);
     monOsc.sendInt("/victoireBouton", 0);
   }
