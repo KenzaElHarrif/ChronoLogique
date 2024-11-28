@@ -244,6 +244,8 @@ void loop() {
     monOsc.sendInt("/encoderButton", encoderButton);
     monOsc.sendInt("/Encoder", encoderRotation);
 
+
+//ETAPE 3
     myPbahub.closeChannel(0);
 
 #define ACTIVE_CHANNELS 3
