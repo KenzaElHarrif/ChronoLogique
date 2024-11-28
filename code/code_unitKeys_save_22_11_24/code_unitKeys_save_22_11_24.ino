@@ -5,6 +5,10 @@
 #include <M5Atom.h>
 #include <MicroOscSlip.h>
 #include <M5_PbHub.h>
+#include "Unit_Encoder.h"
+Unit_Encoder myEncoder;
+
+int myEncoderPreviousRotation;
 #include <VL53L0X.h>
 CRGB pixel;
 unsigned long monChronoMessages;
@@ -41,6 +45,7 @@ void setup() {
   pixel = CRGB(0, 0, 0);
   FastLED.show();
   Wire.begin();
+  myEncoder.begin();//ENCODER
   myPbHub.begin();
   myPbHub.setPixelCount(CHAN_KEY, 1);
   myPbHub.setPixelCount(CHAN_NewKEY, 1);
@@ -213,4 +218,14 @@ if (sequenceIndex == 6) {
     monOsc.sendInt("/victoireBouton", 0);
   }
 }
+//ETAPE 2
+
+
+
+int encoderRotation = myEncoder.getEncoderValue();
+    int encoderButton = myEncoder.getButtonStatus();
+    monOsc.sendInt("/encoderButton", encoderButton);
+    monOsc.sendInt("/Encoder", encoderRotation);
+
+
 }}
