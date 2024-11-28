@@ -74,10 +74,12 @@ void loop() {
         sequenceIndex++;
         myPbHub.setPixelColor(CHAN_KEY, 0, 0, 255, 0);
         monOsc.sendInt("/buttonVert", 1);
+        monOsc.sendInt("/Univ", 1);
       }
       if (maLectureKey == 1) {
         myPbHub.setPixelColor(CHAN_KEY, 0, 0, 0, 0);
         monOsc.sendInt("/buttonVert", 0);
+        monOsc.sendInt("/Univ", 0);
       }
     }
     if (maLectureKeyPrecedentes != maLectureKeys) {
@@ -86,10 +88,12 @@ void loop() {
         sequenceIndex++;
         myPbHub.setPixelColor(CHAN_NewKEY, 0, 0, 0, 255);
         monOsc.sendInt("/buttonBleu", 1);
+        monOsc.sendInt("/Univ", 1);
       }
       if (maLectureKeys == 1) {
         myPbHub.setPixelColor(CHAN_NewKEY, 0, 0, 0, 0);
         monOsc.sendInt("/buttonBleu", 0);
+        monOsc.sendInt("/Univ", 0);
       }
     }
     if (maLectureKeyPrecedentess != maLectureKeyss) {
@@ -98,10 +102,12 @@ void loop() {
         sequenceIndex++;
         myPbHub.setPixelColor(CHAN_NewsKEY, 0, 255, 0, 0);
         monOsc.sendInt("/buttonRouge", 1);
+        monOsc.sendInt("/Univ", 1);
       }
       if (maLectureKeyss == 1) {
         myPbHub.setPixelColor(CHAN_NewsKEY, 0, 0, 0, 0);
         monOsc.sendInt("/buttonRouge", 0);
+        monOsc.sendInt("/Univ", 0);
       }
     }
     if (maLectureKeyPrecedentesss != maLectureKeysss) {
@@ -110,10 +116,12 @@ void loop() {
         sequenceIndex++;
         myPbHub.setPixelColor(CHAN_NewssKEY, 0, 255, 245, 0);
         monOsc.sendInt("/buttonJaune", 1);
+        monOsc.sendInt("/Univ", 1);
       }
       if (maLectureKeysss == 1) {
         myPbHub.setPixelColor(CHAN_NewssKEY, 0, 0, 0, 0);
         monOsc.sendInt("/buttonJaune", 0);
+        monOsc.sendInt("/Univ", 0);
       }
     }
     maLectureKeyPrecedente = maLectureKey;// En gros c'est les détecteurs si clicks pour 1 valeur et non 50 à la secondes
