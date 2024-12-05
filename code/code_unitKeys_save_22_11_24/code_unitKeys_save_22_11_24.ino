@@ -13,7 +13,7 @@ Unit_Encoder myEncoder;
 TCA9548A myPbahub;
 
 int maLectureEncoderPrecedente = -1;  // Pour garder une trace de l'état précédent de l'encodeur
-const int SEQUENCE[3] = {25, 82, 116};
+const int SEQUENCE[3] = {28, 3, 86};
 int recordedData[4] = {0};  // Tableau pour stocker les rotations de l'encodeur
 int recordedIndex = 0;
 
@@ -315,5 +315,17 @@ int encoderRotation = myEncoder.getEncoderValue();
 
     monOsc.sendInt("/connexions", monInt32DeConnexions);
     myPbahub.closeChannel(1);
+    if (monInt32DeConnexions == 140){
+      monOsc.sendInt("/goodConnexion", 1);
+    }
+    else{
+      monOsc.sendInt("/goodConnexion", 0);
+    }
+    if(monInt32DeConnexions >=141){
+      monOsc.sendInt("/extreme", 1);
+    }
+    else{
+      monOsc.sendInt("/extreme", 0);
+    }
   }
 }
