@@ -12,8 +12,10 @@ Unit_Encoder myEncoder;
 #include "TCA9548A.h"
 TCA9548A myPbahub;
 
-
-
+int maLectureEncoderPrecedente = -1;  // Pour garder une trace de l'état précédent de l'encodeur
+const int SEQUENCE[3] = {25, 82, 116};
+int recordedData[4] = {0};  // Tableau pour stocker les rotations de l'encodeur
+int recordedIndex = 0;
 
 int myEncoderPreviousRotation;
 #include <VL53L0X.h>
@@ -237,14 +239,59 @@ void loop() {
     }
     //ETAPE 2
 
-
-
-    int encoderRotation = myEncoder.getEncoderValue();
+int encoderRotation = myEncoder.getEncoderValue();
     int encoderButton = myEncoder.getButtonStatus();
-    monOsc.sendInt("/encoderButton", encoderButton);
-    monOsc.sendInt("/Encoder", encoderRotation);
 
 
+ if (maLectureEncoderPrecedente != encoderButton) {
+    if (encoderButton == 0) {  // if pressé
+      // Enregistrer la valeur de la rotation de l'encodeur dans recordedData
+      if (recordedIndex < 4) {
+        recordedData[recordedIndex] = encoderRotation;  // Sauvegarder la rotation
+        recordedIndex++;
+      }
+
+      
+      
+      monOsc.sendInt("/encod", 1);  
+    }
+    if (encoderButton == 1) {  
+      
+      
+      monOsc.sendInt("/encod", 0);  
+    }
+
+    
+    maLectureEncoderPrecedente = encoderButton;
+  }
+
+  // Vérification de la séquence une fois les 3 valeurs enregistrées
+  if (recordedIndex == 3) {
+    // Vérifier si les rotations correspondent à la séquence correcte
+    bool sequenceCorrect = true;
+    for (int i = 0; i < 3; i++) {
+      if (recordedData[i] != SEQUENCE[i]) {
+        sequenceCorrect = false;
+        break;
+      }
+    }
+
+    // Envoyer un message en fonction du résultat de la vérification
+    if (sequenceCorrect) {
+      monOsc.sendInt("/victory", 1);  // Séquence correcte
+    } else {
+      monOsc.sendInt("/defeated", 1);  // Séquence incorrecte
+      delay(2000);
+      monOsc.sendInt("/defeated", 0);
+    }
+
+    // Réinitialiser l'index pour une nouvelle séquence
+    recordedIndex = 0;
+  }
+
+  
+  monOsc.sendInt("/encoderButton", encoderButton);
+  monOsc.sendInt("/EncoderRotation", encoderRotation);
 //ETAPE 3
     myPbahub.closeChannel(0);
 
