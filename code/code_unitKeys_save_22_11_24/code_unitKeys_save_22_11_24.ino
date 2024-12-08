@@ -254,11 +254,13 @@ int encoderRotation = myEncoder.getEncoderValue();
       
       
       monOsc.sendInt("/encod", 1);  
+      delay(50);
     }
     if (encoderButton == 1) {  
       
       
       monOsc.sendInt("/encod", 0);  
+      delay(20);
     }
 
     
@@ -279,6 +281,7 @@ int encoderRotation = myEncoder.getEncoderValue();
     // Envoyer un message en fonction du résultat de la vérification
     if (sequenceCorrect) {
       monOsc.sendInt("/victory", 1);  // Séquence correcte
+      delay(10);
     } else {
       monOsc.sendInt("/defeated", 1);  // Séquence incorrecte
       delay(2000);
